@@ -17,14 +17,16 @@ def count_neighbors(grid, row, col):
     
     # TODO: Implement your neighbor-counting logic here!
     
+    # We check all 8 surrounding positions around the current cell.
+    # The row and col values can be from row-1 to row+1 and col-1 to col+1.
     
     for r in range(row - 1, row + 2):
         for c in range(col - 1, col + 2):
-            
+             # Skip the current cell itself.
             if r == row and c == col:
                 continue
 
-           
+            # Ignore cells that are outside the grid.
             if r < 0 or r >= len(grid):
                 continue
             if c < 0 or c >= len(grid[0]):
