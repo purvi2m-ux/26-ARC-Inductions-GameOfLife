@@ -75,11 +75,16 @@ def compute_next_generation(grid):
 
                 current_cell = grid[r][c]
                 neighbor_count = count_neighbors(grid, r, c)
-
-                if neighbor_count == 2 or neighbor_count == 3:
-                     new_row.append(1)
+                if current_cell == 1:
+                    if neighbor_count == 2 or neighbor_count == 3:
+                        new_row.append(1)
+                    else:
+                        new_row.append(0)
                 else:
-                    new_row.append(0)
+                    if neighbor_count == 3:
+                        new_row.append(1)
+                    else:
+                        new_row.append(0)
 
     # TODO: Use your `count_neighbors` function to find out how many neighbors it has.
     # TODO: Apply the 4 Rules of Life to determine if it should be 1 (alive) or 0 (dead) in `next_grid`.
