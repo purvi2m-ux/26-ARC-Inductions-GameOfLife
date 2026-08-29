@@ -71,7 +71,10 @@ def compute_next_generation(grid):
     # TODO: Iterate through every cell in the `grid`.    
     # TODO: Use your `count_neighbors` function to find out how many neighbors it has.
     # TODO: Apply the 4 Rules of Life to determine if it should be 1 (alive) or 0 (dead) in `next_grid`.
-
+    CONWAY_RULES =   # Rule 1: A live cell with fewer than 2 live neighbors dies.
+                     # Rule 2: A live cell with 2 or 3 live neighbors survives.
+                     # Rule 3: A live cell with more than 3 live neighbors dies.
+                     # Rule 4: A dead cell with exactly 3 live neighbors becomes alive.}
 
     # Loop through every row in the current grid.
     for r in range(rows):
