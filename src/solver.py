@@ -63,16 +63,21 @@ def compute_next_generation(grid):
     rows = len(grid)
     cols = len(grid[0]) if rows > 0 else 0
     
-    # Create a new blank grid of the same size, filled with 0s (dead cells)
     
+    # Create a new blank grid of the same size.
+        # Everything starts as 0, meaning dead cells.
     next_grid = []
     
     # TODO: Iterate through every cell in the `grid`.    
     # TODO: Use your `count_neighbors` function to find out how many neighbors it has.
     # TODO: Apply the 4 Rules of Life to determine if it should be 1 (alive) or 0 (dead) in `next_grid`.
+
+
+    # Loop through every row in the current grid.
     for r in range(rows):
             
             new_row = []
+            # Loop through every column in the current grid.
            for c in range(cols):
 
                 current_cell = grid[r][c]
@@ -87,7 +92,7 @@ def compute_next_generation(grid):
                         new_row.append(1)
                     else:
                         new_row.append(0)
-
+             # Add this finished row to the new grid.
             next_grid.append(new_row)
 
     
