@@ -63,44 +63,43 @@ def compute_next_generation(grid):
     rows = len(grid)
     cols = len(grid[0]) if rows > 0 else 0
     
-    
     # Create a new blank grid of the same size.
-        # Everything starts as 0, meaning dead cells.
+    # Everything starts as 0, meaning dead cells.   
     next_grid = []
-    
-    # TODO: Iterate through every cell in the `grid`.    
-    # TODO: Use your `count_neighbors` function to find out how many neighbors it has.
-    # TODO: Apply the 4 Rules of Life to determine if it should be 1 (alive) or 0 (dead) in `next_grid`.
-    CONWAY_RULES =   # Rule 1: A live cell with fewer than 2 live neighbors dies.
-                     # Rule 2: A live cell with 2 or 3 live neighbors survives.
-                     # Rule 3: A live cell with more than 3 live neighbors dies.
-                     # Rule 4: A dead cell with exactly 3 live neighbors becomes alive.}
 
+    
     # Loop through every row in the current grid.
     for r in range(rows):
-            
             new_row = []
+    
             # Loop through every column in the current grid.
-           for c in range(cols):
-
+            for c in range(cols):
                 current_cell = grid[r][c]
                 neighbor_count = count_neighbors(grid, r, c)
+                #CONWAY'S RULES:
+                # Rule 1: A live cell with fewer than 2 live neighbors dies.
+                # Rule 2: A live cell with 2 or 3 live neighbors survives.
+                # Rule 3: A live cell with more than 3 live neighbors dies.
+                # Rule 4: A dead cell with exactly 3 live neighbors becomes alive.
                 if current_cell == 1:
-                # Rule 2: A live cell with 2 or 3 live neighbours survives.
+                    # Rule 2: A live cell with 2 or 3 live neighbours survives.
                     if neighbor_count == 2 or neighbor_count == 3:
                         new_row.append(1)
-                 # Rule 1 & 3: A live cell with fewer than 2 (underpopulation)
-                 # or more than 3 (overpopulation) live neighbours dies.       
+                    # Rule 1 & 3: A live cell with fewer than 2 (underpopulation)
+                    # or more than 3 (overpopulation) live neighbours dies.
                     else:
                         new_row.append(0)
                 else:
-                 # Rule 4: A dead cell with exactly 3 live neighbours becomes alive.
+                    # Rule 4: A dead cell with exactly 3 live neighbours becomes alive.
                     if neighbor_count == 3:
                         new_row.append(1)
+                    # Otherwise the dead cell remains dead.
                     else:
                         new_row.append(0)
-             # Add this finished row to the new grid.
+    
+            # Add this finished row to the new grid.
             next_grid.append(new_row)
+    
 
     
 
