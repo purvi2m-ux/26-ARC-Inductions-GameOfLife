@@ -86,8 +86,11 @@ def compute_next_generation(grid):
                 current_cell = grid[r][c]
                 neighbor_count = count_neighbors(grid, r, c)
                 if current_cell == 1:
+                # Rule 2: A live cell with 2 or 3 live neighbours survives.
                     if neighbor_count == 2 or neighbor_count == 3:
                         new_row.append(1)
+                 # Rule 1 & 3: A live cell with fewer than 2 (underpopulation)
+                 # or more than 3 (overpopulation) live neighbours dies.       
                     else:
                         new_row.append(0)
                 else:
