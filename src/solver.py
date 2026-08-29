@@ -94,6 +94,7 @@ def compute_next_generation(grid):
                     else:
                         new_row.append(0)
                 else:
+                 # Rule 4: A dead cell with exactly 3 live neighbours becomes alive.
                     if neighbor_count == 3:
                         new_row.append(1)
                     else:
