@@ -59,6 +59,9 @@ def compute_next_generation(grid):
           You must create a new grid to store the updated states, otherwise 
           your changes will mess up the neighbor counts for subsequent cells!
     """
+    # TODO: Iterate through every cell in the `grid`.
+    # TODO: Use your `count_neighbors` function to find out how many neighbors it has.
+    # TODO: Apply the 4 Rules of Life to determine if it should be 1 (alive) or 0 (dead) in `next_grid`.
     
     rows = len(grid)
     cols = len(grid[0]) if rows > 0 else 0
