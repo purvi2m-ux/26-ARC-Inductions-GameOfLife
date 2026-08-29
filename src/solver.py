@@ -25,6 +25,8 @@ def count_neighbors(grid, row, col):
              # Skip the current cell itself.
             if r == row and c == col:
                 continue
+            
+            # This helps when the cell is on the edge of the map.
 
             # Ignore cells that are outside the grid.
             if r < 0 or r >= len(grid):
@@ -32,6 +34,7 @@ def count_neighbors(grid, row, col):
             if c < 0 or c >= len(grid[0]):
                 continue
 
+            # If the neighbor is alive, then count it.
             
             if grid[r][c] == 1:
                 alive_count += 1
