@@ -86,6 +86,8 @@ def compute_next_generation(grid):
                     else:
                         new_row.append(0)
 
+            next_grid.append(new_row)
+
     # TODO: Use your `count_neighbors` function to find out how many neighbors it has.
     # TODO: Apply the 4 Rules of Life to determine if it should be 1 (alive) or 0 (dead) in `next_grid`.
 
