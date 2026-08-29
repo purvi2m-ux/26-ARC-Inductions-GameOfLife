@@ -67,7 +67,9 @@ def compute_next_generation(grid):
     
     next_grid = []
     
-    # TODO: Iterate through every cell in the `grid`.
+    # TODO: Iterate through every cell in the `grid`.    
+    # TODO: Use your `count_neighbors` function to find out how many neighbors it has.
+    # TODO: Apply the 4 Rules of Life to determine if it should be 1 (alive) or 0 (dead) in `next_grid`.
     for r in range(rows):
             
             new_row = []
@@ -88,7 +90,6 @@ def compute_next_generation(grid):
 
             next_grid.append(new_row)
 
-    # TODO: Use your `count_neighbors` function to find out how many neighbors it has.
-    # TODO: Apply the 4 Rules of Life to determine if it should be 1 (alive) or 0 (dead) in `next_grid`.
+    
 
     return next_grid
